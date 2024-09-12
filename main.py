@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # image path.
-path = "panda.jpg"
+path = "man.jpg"
 
 # read image.
 image = cv.imread(path, cv.IMREAD_COLOR)
@@ -35,7 +35,7 @@ out = out.flatten()
 
 classID = np.argmax(out)
 class_name = classes[classID]
-confidence = f"{round(out[classID] * 100, 3)}%"
+confidence = f"{round(float(out[classID]) * 100, 2)}%"
 
 print(class_name, confidence)
 
